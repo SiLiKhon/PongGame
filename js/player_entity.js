@@ -27,7 +27,7 @@ class PlayerEntity extends me.Sprite {
         this.body.setMaxVelocity(0, 7);
         this.body.setFriction(0, 1.5);
         this.body.collisionType = me.collision.types.PLAYER_OBJECT;
-        if (x > me.game.viewport.width / 2) this.flipX();
+        // if (x > me.game.viewport.width / 2) this.flipX();
 
         this.ballEntity = me.game.world.getChildByType(BallEntity)[0];
     }
