@@ -2,7 +2,7 @@ import * as me from "../MelonJS/13.0.0/esm.js";
 
 class BallEntity extends me.Sprite {
     constructor() {
-        let image = me.loader.getImage("playerPad");
+        let image = me.loader.getImage("Ball");
         image.width = 40;
         image.height = 40;
 
@@ -21,12 +21,10 @@ class BallEntity extends me.Sprite {
         // this.body = new me.Body(this, new me.Rect(0, 0, this.width, this.height));
         this.body = new me.Body(this, new me.Rect(-this.width / 2, -this.height / 2, this.width, this.height));
         this.body.ignoreGravity = true;
-        this.body.setMaxVelocity(20, 20);
+        this.body.setMaxVelocity(10, 10);
+        this.body.bounce = 10;
 
-        this.body.vel.set(
-            me.Math.randomFloat(-20, -10),
-            0//me.Math.randomFloat(-20, 20)
-        );
+        this.body.vel.set((1 - me.Math.random(0, 2) * 2) * 20, 0);
     }
 
     update(dt) {
@@ -45,11 +43,14 @@ class BallEntity extends me.Sprite {
     }
 
     onCollision(response, other) {
-        if (other.body.collisionType === me.collision.types.PLAYER_OBJECT) {
-            this.body.vel.x = Math.abs(this.body.vel.x);
-            this.body.vel.y += other.body.vel.y * 0.25;
-        }
-        return false;
+        // if (other.body.collisionType === me.collision.types.PLAYER_OBJECT) {
+        //     this.body.vel.x = (
+        //         (other.pos.x > me.game.viewport.width / 2) ? -1 : 1
+        //     ) * Math.abs(this.body.vel.x);
+        //     this.body.vel.y += other.body.vel.y * 0.25;
+        // }
+        this.body.vel.y += other.body.vel.y * 0.25;
+        return true;
     }
 };
 
