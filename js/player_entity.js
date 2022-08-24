@@ -42,7 +42,7 @@ class PlayerEntity extends me.Sprite {
         } else {
             var x_dist = (this.pos.x - this.ballEntity.pos.x)
             if (x_dist * this.ballEntity.body.vel.x > 0) {
-                x_dist -= (this.width + this.ballEntity.width) / 2;
+                x_dist -= (this.width + this.ballEntity.width) / 2 * Math.sign(x_dist);
                 var y_dist = x_dist / this.ballEntity.body.vel.x * this.ballEntity.body.vel.y;
                 var adj_vp_height = me.game.viewport.height - this.ballEntity.height;
                 var target_y = (

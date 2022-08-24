@@ -31,13 +31,30 @@ me.device.onReady(async () => {
         me.pool.register("ball", BallEntity);
 
         // enable the keyboard
-        me.input.bindKey(me.input.KEY.UP,  "up");
+        me.input.bindKey(me.input.KEY.UP, "up");
+        me.input.bindKey(me.input.KEY.W, "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
-        me.input.bindKey(me.input.KEY.ESC, "quit");
+        me.input.bindKey(me.input.KEY.S, "down");
+        me.input.bindKey(me.input.KEY.ESC, "quit", true);
+        me.input.bindKey(me.input.KEY.SPACE, "start", true);
+        me.input.bindKey(me.input.KEY.ENTER, "start", true);
         me.event.on(me.event.KEYDOWN, (action) => {
             if (action === "quit") { me.state.change(me.state.MENU); }
         });
+        me.event.on(me.event.KEYDOWN, (action) => {
+            if (action === "start") {
+                var stage = me.state.current();
+                if (stage instanceof PlayScreen) {
+                    if (!stage.ball.moving) stage.ball.startMoving();
+                } else if (stage instanceof MenuScreen) {
+                    me.state.change(me.state.PLAY);
+                }
+            }
+        });
 
+        me.state.transition("fade", "#010101", 100);
         me.state.change(me.state.MENU);
+
+        me.game.score_data = {};
     });
 });
