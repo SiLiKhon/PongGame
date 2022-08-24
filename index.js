@@ -2,6 +2,7 @@ import * as me from "./MelonJS/13.0.0/esm.js";
 
 import DataManifest from './manifest.js';
 import PlayScreen from './js/play_screen.js';
+import MenuScreen from './js/menu_screen.js';
 import PlayerEntity from "./js/player_entity.js";
 import BallEntity from "./js/ball_entity.js"
 
@@ -23,6 +24,7 @@ me.device.onReady(async () => {
 
     me.loader.preload(DataManifest, function() {
         me.state.set(me.state.PLAY, new PlayScreen());
+        me.state.set(me.state.MENU, new MenuScreen());
 
         // add our player entity in the entity pool
         me.pool.register("mainPlayer", PlayerEntity);
@@ -31,7 +33,11 @@ me.device.onReady(async () => {
         // enable the keyboard
         me.input.bindKey(me.input.KEY.UP,  "up");
         me.input.bindKey(me.input.KEY.DOWN, "down");
+        me.input.bindKey(me.input.KEY.ESC, "quit");
+        me.event.on(me.event.KEYDOWN, (action) => {
+            if (action === "quit") { me.state.change(me.state.MENU); }
+        });
 
-        me.state.change(me.state.PLAY);
+        me.state.change(me.state.MENU);
     });
 });
