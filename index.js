@@ -12,11 +12,11 @@ me.device.onReady(async () => {
         return;
     }
 
-    // initialize the debug plugin in development mode.
-    await import('./js/plugin/debug/debugPanel.js').then((plugin) => {
-        // automatically register the debug panel
-        me.utils.function.defer(me.plugin.register, this, plugin.DebugPanelPlugin, "debugPanel");
-    });
+    // // initialize the debug plugin in development mode.
+    // await import('./js/plugin/debug/debugPanel.js').then((plugin) => {
+    //     // automatically register the debug panel
+    //     me.utils.function.defer(me.plugin.register, this, plugin.DebugPanelPlugin, "debugPanel");
+    // });
 
     // me.audio.init("mp3,ogg");
 
