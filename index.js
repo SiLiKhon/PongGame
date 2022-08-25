@@ -62,6 +62,13 @@ me.device.onReady(async () => {
         me.state.transition("fade", "#010101", 100);
         me.state.change(me.state.MENU);
 
+        // https://stackoverflow.com/a/4209079/3801744
+        var pairs = location.search.substring(1).split('&');
+        for (var i = 0; i < pairs.length; i++) {
+          var pair = pairs[i].split('=');
+          if (pair[0] === "maxfps") me.timer.maxfps = Number(pair[1]);
+        }
+
         me.game.score_data = {};
     });
 });
