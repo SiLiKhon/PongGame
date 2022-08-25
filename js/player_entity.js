@@ -4,7 +4,7 @@ import BallEntity from "./ball_entity.js"
 
 class PlayerEntity extends me.Sprite {
     constructor(x, isPlayer) {
-        let image = me.loader.getImage("playerPad");
+        let image = me.loader.getImage("PlayerPad");
         image.width = 25;
         image.height = 150;
 
@@ -27,16 +27,22 @@ class PlayerEntity extends me.Sprite {
         this.body.setMaxVelocity(0, 7);
         this.body.setFriction(0, 1.5);
         this.body.collisionType = me.collision.types.PLAYER_OBJECT;
-        // if (x > me.game.viewport.width / 2) this.flipX();
+        if (x > me.game.viewport.width / 2) {
+            this.up_action = "r_up";
+            this.down_action = "r_down"
+        } else {
+            this.up_action = "l_up";
+            this.down_action = "l_down";
+        }
 
         this.ballEntity = me.game.world.getChildByType(BallEntity)[0];
     }
 
     update(dt) {
         if (this.isPlayer) {
-            if (me.input.isKeyPressed("up")) {
+            if (me.input.isKeyPressed(this.up_action)) {
                 this.body.force.y = -this.body.maxVel.y;
-            } else if (me.input.isKeyPressed("down")) {
+            } else if (me.input.isKeyPressed(this.down_action)) {
                 this.body.force.y = this.body.maxVel.y;
             }
         } else {

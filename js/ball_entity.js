@@ -67,7 +67,9 @@ class BallEntity extends me.Sprite {
             } else {
                 me.game.score_data["left"] += 1;
             }
-            console.log(me.game.score_data);
+            me.state.current().scoreText.setText(
+                "" + me.game.score_data["left"] + " : " + me.game.score_data["right"]
+            );
             this.reset();
         }
 

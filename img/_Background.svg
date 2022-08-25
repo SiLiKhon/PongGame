@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1218"
+   height="562"
+   viewBox="0 0 1218 562.00004"
+   version="1.1"
+   id="svg3946"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3943">
+    <pattern
+       xlink:href="#pattern17179"
+       id="pattern17184"
+       patternTransform="matrix(0.54145807,0.54460393,-0.54145917,0.53833148,609.0001,281.00003)" />
+    <linearGradient
+       id="linearGradient15474">
+      <stop
+         style="stop-color:#12374e;stop-opacity:1;"
+         offset="0"
+         id="stop15472" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient11951">
+      <stop
+         style="stop-color:#12364d;stop-opacity:1;"
+         offset="0"
+         id="stop11947" />
+      <stop
+         style="stop-color:#0b202e;stop-opacity:1;"
+         offset="1"
+         id="stop11949" />
+    </linearGradient>
+    <radialGradient
+       xlink:href="#linearGradient11951"
+       id="radialGradient11953"
+       cx="609"
+       cy="281"
+       fx="609"
+       fy="281"
+       r="609"
+       gradientTransform="matrix(1.8853818,0,0,0.76410678,-539.1975,66.286)"
+       gradientUnits="userSpaceOnUse" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="70.634918"
+       height="70.634918"
+       patternTransform="translate(364.14349,-118.8867)"
+       id="pattern17179">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#0b202f;stroke-width:3.77953;stroke-dasharray:none;stroke-opacity:1"
+         id="rect15589"
+         width="66.855392"
+         height="66.855392"
+         x="1.8897637"
+         y="1.8897637" />
+    </pattern>
+  </defs>
+  <g
+     id="layer2">
+    <g
+       id="g255">
+      <rect
+         style="fill:url(#radialGradient11953);fill-opacity:1;stroke-width:2.51339"
+         id="rect4198"
+         width="1218"
+         height="562"
+         x="0"
+         y="0" />
+      <rect
+         style="fill:url(#pattern17184);fill-opacity:1;stroke-width:2.51339"
+         id="rect13459"
+         width="1218"
+         height="562"
+         x="0"
+         y="0" />
+    </g>
+  </g>
+</svg>

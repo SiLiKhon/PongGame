@@ -7,7 +7,7 @@ import PlayerEntity from "./js/player_entity.js";
 import BallEntity from "./js/ball_entity.js"
 
 me.device.onReady(async () => {
-    if (!me.video.init(1218, 562, {parent : "screen", scale : "auto"})) {
+    if (!me.video.init(1218, 562, {parent : "screen", scale : "auto", antiAlias: true})) {
         alert("Your browser does not support HTML5 canvas.");
         return;
     }
@@ -31,10 +31,14 @@ me.device.onReady(async () => {
         me.pool.register("ball", BallEntity);
 
         // enable the keyboard
-        me.input.bindKey(me.input.KEY.UP, "up");
-        me.input.bindKey(me.input.KEY.W, "up");
-        me.input.bindKey(me.input.KEY.DOWN, "down");
-        me.input.bindKey(me.input.KEY.S, "down");
+        me.input.bindKey(me.input.KEY.UP, "r_up");
+        me.input.bindKey(me.input.KEY.W, "l_up");
+        me.input.bindKey(me.input.KEY.DOWN, "r_down");
+        me.input.bindKey(me.input.KEY.S, "l_down");
+        me.input.bindKey(me.input.KEY.A, "left");
+        me.input.bindKey(me.input.KEY.LEFT, "left");
+        me.input.bindKey(me.input.KEY.D, "right");
+        me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.ESC, "quit", true);
         me.input.bindKey(me.input.KEY.SPACE, "start", true);
         me.input.bindKey(me.input.KEY.ENTER, "start", true);
@@ -47,7 +51,10 @@ me.device.onReady(async () => {
                 if (stage instanceof PlayScreen) {
                     if (!stage.ball.moving) stage.ball.startMoving();
                 } else if (stage instanceof MenuScreen) {
-                    me.state.change(me.state.PLAY);
+                    me.state.change(me.state.PLAY, {
+                        left: stage.leftPlayerOption.optionsText[stage.leftPlayerOption.currentOption],
+                        right: stage.rightPlayerOption.optionsText[stage.rightPlayerOption.currentOption],
+                    });
                 }
             }
         });
