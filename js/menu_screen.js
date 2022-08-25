@@ -14,7 +14,11 @@ class MenuButton extends me.GUI_Object {
         this.pos.z = 4;
     }
     onClick() {
-        me.state.change(me.state.PLAY);
+        var stage = me.state.current();
+        me.state.change(me.state.PLAY,  {
+            left: stage.leftPlayerOption.optionsText[stage.leftPlayerOption.currentOption],
+            right: stage.rightPlayerOption.optionsText[stage.rightPlayerOption.currentOption],
+        });
         return true;
     }
 };
