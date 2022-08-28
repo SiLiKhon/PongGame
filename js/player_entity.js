@@ -30,9 +30,11 @@ class PlayerEntity extends me.Sprite {
         if (x > me.game.viewport.width / 2) {
             this.up_action = "r_up";
             this.down_action = "r_down"
+            this.control = "rightControl";
         } else {
             this.up_action = "l_up";
             this.down_action = "l_down";
+            this.control = "leftControl";
         }
 
         this.ballEntity = me.game.world.getChildByType(BallEntity)[0];
@@ -40,9 +42,9 @@ class PlayerEntity extends me.Sprite {
 
     update(dt) {
         if (this.isPlayer) {
-            if (me.input.isKeyPressed(this.up_action)) {
+            if (me.input.isKeyPressed(this.up_action) || me.state.current()[this.control].trigUp) {
                 this.body.force.y = -this.body.maxVel.y;
-            } else if (me.input.isKeyPressed(this.down_action)) {
+            } else if (me.input.isKeyPressed(this.down_action) || me.state.current()[this.control].trigDown) {
                 this.body.force.y = this.body.maxVel.y;
             }
         } else {

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="180"
+   height="60"
+   viewBox="0 0 180 60.000005"
+   version="1.1"
+   id="svg3946"
+   sodipodi:docname="Start.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.9128739"
+     inkscape:cx="73.972465"
+     inkscape:cy="38.162473"
+     inkscape:window-width="1103"
+     inkscape:window-height="618"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3946" />
+  <defs
+     id="defs3943">
+    <linearGradient
+       id="linearGradient15474">
+      <stop
+         style="stop-color:#12374e;stop-opacity:1;"
+         offset="0"
+         id="stop15472" />
+    </linearGradient>
+  </defs>
+  <path
+     id="path184"
+     style="display:inline;fill:#e97020;stroke-width:6.28476"
+     d="M 30 0 C 13.431475 0 0 13.431475 0 30 C 0 46.568525 13.431475 60 30 60 L 150 60 C 166.56852 60 180 46.568525 180 30 C 180 13.431475 166.56852 0 150 0 L 30 0 z " />
+  <path
+     id="circle3003"
+     style="display:inline;fill:#5c3012;stroke-width:5.49917"
+     d="M 30,3.75 C 15.502539,3.75 3.75,15.502539 3.75,30 3.75,44.497461 15.502539,56.25 30,56.25 H 150 C 164.49746,56.25 176.25,44.497461 176.25,30 176.25,15.502539 164.49746,3.75 150,3.75 Z" />
+</svg>
